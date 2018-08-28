@@ -53,16 +53,12 @@ class Form2 extends Component {
         let imageUrl = response.signedUrl.split('?').shift();
         if (this.props.photo1 === "/static/media/none.db88a501.png"){
             update_photo1(imageUrl);
-            console.log("photo 1: ", this.props.photo1);
         } else if (this.props.photo2 === "/static/media/none.db88a501.png"){
-            update_photo2(imageUrl)
-            // console.log("photo 2: ", this.props.photo2)
+            update_photo2(imageUrl);
         } else if (this.props.photo3 === "/static/media/none.db88a501.png"){
             update_photo3(imageUrl)
-            console.log("photo 3: ", this.props.photo3)
         } else if (this.props.photo4 === "/static/media/none.db88a501.png"){
             update_photo4(imageUrl);
-            console.log("photo 4: ", this.props.photo4)
             this.toggleUploader();
         } else {alert("You can only upload four photos for each instrument")}
         
@@ -84,7 +80,7 @@ class Form2 extends Component {
                     <img alt="" src={add_icon} onClick={this.toggleAddGear} className="buttons" />
                     <Link to="/"><img src={logout_icon} alt="logout" onClick={this.props.logOut} className="buttons"/></Link>
                     <div className="spacer" />
-                    <Link to="/home"><img alt="" src={logo} className="logo" /></Link>
+                    <Link to="/dash"><img alt="" src={logo} className="logo" /></Link>
                 </div>
                 <div className="content-box">
                     <div className="left-div-photos">

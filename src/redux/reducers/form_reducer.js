@@ -1,7 +1,6 @@
 const initialState = {
         make: "",
         model: "",
-        name: "",
         serial: "",
         condition:"",
         category: "",
@@ -11,7 +10,6 @@ const initialState = {
 
 const UPDATE_MAKE = "UPDATE_MAKE"
 const UPDATE_MODEL  = "UPDATE_MODEL"
-const UPDATE_NAME = "UPDATE_NAME"
 const UPDATE_SERIAL = "UPDATE_SERIAL"
 const UPDATE_CONDITION = "UPDATE_CONDITION"
 const UPDATE_CATEGORY = "UPDATE_CATEGORY"
@@ -24,8 +22,6 @@ function reducer(state=initialState, action){
       return {...state, make: action.payload}
       case UPDATE_MODEL:
       return {...state, model: action.payload}
-      case UPDATE_NAME:
-      return {...state, name: action.payload}
       case UPDATE_SERIAL:
       return {...state, serial: action.payload}
       case UPDATE_CONDITION:
@@ -51,13 +47,6 @@ export function update_model(model) {
   return {
     type: UPDATE_MODEL,
     payload: model
-  };
-}
-
-export function update_name(name) {
-  return {
-    type: UPDATE_NAME,
-    payload: name
   };
 }
 

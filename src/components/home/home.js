@@ -50,7 +50,7 @@ class Home extends Component {
           <div className="header-overlay"></div>
           <div className="header-content">
           <img className="mainlogo" src={logo} style={{marginBottom: "-6vh"}} alt=""></img>
-          <p className="homepage-text" style={{paddingLeft: "6vw", paddingRight: "6vw"}}>Helping musicians and engineers manage and protect their most valuable asset: their gear. </p>
+          <p className="homepage-text" style={{paddingLeft: "6vw", paddingRight: "6vw"}}>Helping musicians and engineers protect their instruments, equipment and gear. </p>
             <div className="buttons-wrapper">
               <button onClick={this.login} className="login">Log In</button>
               <button className="register" onClick={this.login} >Register</button>

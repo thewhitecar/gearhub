@@ -18,7 +18,6 @@ class Form4 extends Component {
     handleAddGear = () => {
         let obj = {
             owner_id: this.props.user.id,
-            name: this.props.name,
             make: this.props.make,
             serial: this.props.serial,
             model: this.props.model,
@@ -46,14 +45,13 @@ class Form4 extends Component {
                     <img alt="" src={add_icon} onClick={this.toggleAddGear} className="buttons" />
                     <Link to="/"><img src={logout_icon} alt="logout" onClick={this.props.logOut} className="buttons"/></Link>
                     <div className="spacer" />
-                    <Link to="/home"><img alt="" src={logo} className="logo" onClick={this.toggleGear} /></Link>
+                    <Link to="/dash"><img alt="" src={logo} className="logo" onClick={this.toggleGear} /></Link>
                 </div>
                 <div className="content-box">
                     <div className="left-div">
                         <Link to="/form3"><img src={left} alt="" /></Link>
                     </div>
                     <div className="form4box">
-                        <p className="form4ptitle">name: {this.props.name}</p>
                         <p className="form4ptitle">make: {this.props.make}</p>
                         <p className="form4ptitle">serial: {this.props.serial}</p>
                         <p className="form4ptitle">model: {this.props.model}</p>
@@ -70,12 +68,11 @@ class Form4 extends Component {
 
 function mapStateToProps(state) {
  
-    const { make, model, name, serial, condition, category, description } = state.form;
+    const { make, model, serial, condition, category, description } = state.form;
     
     return {
         make,
         model,
-        name,
         serial,
         condition,
         category,

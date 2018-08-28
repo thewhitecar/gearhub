@@ -22,7 +22,7 @@ class Form3 extends Component{
                     <img alt="" src={add_icon} onClick={this.toggleAddGear} className="buttons" />
                     <Link to="/"><img src={logout_icon} alt="logout" onClick={this.props.logOut} className="buttons"/></Link>
                     <div className="spacer" />
-                    <Link to="/home"><img alt="" src={logo} className="logo" /></Link>
+                    <Link to="/dash"><img alt="" src={logo} className="logo" /></Link>
                 </div>
                 <div className="content-box">
                     <div className="left-div">

@@ -54,10 +54,10 @@ export default class ExpandGear extends Component {
         })
     }
 
-    deleteGearById(){
-        let { id } = this.props.match.params;
+    deleteGearById = (id) => {
         axios.delete(`/api/gear/${id}`).then(results => {
             this.props.history.push('/dash')
+            console.log(results)
         })
     }
 
@@ -66,6 +66,7 @@ export default class ExpandGear extends Component {
     }
 
     render() {
+        let {id} = this.props.match.params
         return (
             <div className="background">
                 <div className="header">
@@ -89,12 +90,11 @@ export default class ExpandGear extends Component {
 
                             <GearSlider img1={this.state.photo_url_1} img2={this.state.photo_url_2} img3={this.state.photo_url_3} img4={this.state.photo_url_4} />
                             <div className="geardeletecontainer">
-                                <img alt="delete" onClick={(id) => this.deleteGearById(id)} className="delete_icon" src={delete_icon}></img>
+                                <img alt="delete" onClick={() => this.deleteGearById(id)} className="delete_icon" src={delete_icon}></img>
                                 <p className="gear_p">edit</p>
                             </div>
 
                             <div className="gearInfo">
-                                <div><span className="gear_p_orange">name:   </span><span className="gear_p2">{this.state.name}</span></div>
                                 <div><span className="gear_p_orange">make:   </span><span className="gear_p2">{this.state.make}</span></div>
                                 <div><span className="gear_p_orange">model:   </span><span className="gear_p2">{this.state.model}</span></div>
                                 <div><span className="gear_p_orange">category:   </span><span className="gear_p2">{this.state.category}</span></div>

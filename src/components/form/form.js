@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {update_make, update_model, update_name, update_serial, update_condition, update_category} from '../../redux/reducers/form_reducer'
+import {update_make, update_model, update_serial, update_condition, update_category} from '../../redux/reducers/form_reducer'
 import { Link } from 'react-router-dom';
 import { logOut } from '../../redux/reducers/auth_reducer'
 import categoryArray from '../../jsData/categoryVariables';
@@ -16,7 +16,7 @@ import logout_icon from './logout.png'
 class Form extends Component{
 
     render() {
-        const {update_make, update_model, update_name, update_serial, update_condition, update_category} = this.props
+        const {update_make, update_model, update_serial, update_condition, update_category} = this.props
         let categoryMap= [];
         categoryMap = categoryArray.map(e => {
             return(
@@ -34,7 +34,7 @@ class Form extends Component{
                     <Link to="/form"><img alt="" src={add_icon} className="buttons" /></Link>
                     <Link to="/"><img src={logout_icon} alt="logout" onClick={this.props.logOut} className="buttons"/></Link>
                     <div className="spacer" />
-                    <Link to="/home"><img  alt="" src={logo} className="logo"/></Link>
+                    <Link to="/dash"><img  alt="" src={logo} className="logo"/></Link>
                 </div>
                 <div className="content-box">
                 <div className="spacer-left-arrow"/>
@@ -42,7 +42,6 @@ class Form extends Component{
             <h1 className="heading"> add gear to your inventory </h1>
             <input className="input-field" value={this.props.make} placeholder="make" onChange= {( e ) => update_make( e.target.value )}></input>
             <input className="input-field" value={this.props.model}placeholder="model" onChange= {( e ) => update_model( e.target.value )}></input>
-            <input className="input-field" value={this.props.name} placeholder="name" onChange= {( e ) => update_name( e.target.value )}></input>
             <input className="input-field" value={this.props.serial} placeholder="serial" onChange= {( e ) => update_serial( e.target.value )}></input>
             <select className="input-field" value={this.props.condition} onChange = { ( e ) => update_condition( e.target.value ) }>
                 <option className ="input-field"  value="">condition</option>
@@ -62,16 +61,15 @@ class Form extends Component{
 
 
 function mapStateToProps( state ) {
-    const { make, model, name, serial, condition, category} = state.form;
+    const { make, model, serial, condition, category} = state.form;
   
     return {
       make,
       model,
-      name,
       serial,
       condition,
       category,
     };
   }
   
-export default connect(mapStateToProps,{update_make, update_model, update_name, update_serial, update_condition, update_category, logOut})(Form);
+export default connect(mapStateToProps,{update_make, update_model, update_serial, update_condition, update_category, logOut})(Form);
