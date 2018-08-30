@@ -53,6 +53,7 @@ app.get('/api/gearCategoryView', GearCtrl.getCategoryView)
 app.get('/api/gear/:id', GearCtrl.getGearById)
 app.post('/api/gear', GearCtrl.post)
 app.delete('/api/gear/:id', GearCtrl.deleteGearById)
+app.put('/api/gear/:id', GearCtrl.updateGearById)
 
 //S3 ENDPOINTS
 

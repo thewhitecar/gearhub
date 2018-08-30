@@ -7,12 +7,12 @@ module.exports = {
   post: async (req, res) => {
     try {
       let db = req.app.get('db')
-      let { owner_id, make, model, name, serial, condition, category, description, photo1, photo2, photo3, photo4 } = req.body;
+      let { owner_id, make, model, serial, condition, category, description, photo1, photo2, photo3, photo4 } = req.body;
       let categoryObject = categoryArray.find(obj => obj.categoryPath === category);
       let categorySlug = categoryObject.slug;
       let category_id = categoryObject.categoryid;
       let categorydisplay = categoryObject.categorydisplay;
-      let gearInfo = await db.addGear([owner_id, name, make, model, serial, condition, categorydisplay, category, category_id, categorySlug, description, photo1, photo2, photo3, photo4])
+      let gearInfo = await db.addGear([owner_id, make, model, serial, condition, categorydisplay, category, category_id, categorySlug, description, photo1, photo2, photo3, photo4])
       res.send(gearInfo[0])
     } catch (error) {
       console.log('Gear Post Error', error)
@@ -87,7 +87,24 @@ module.exports = {
       console.log('Gear Delete Error', error)
       res.status(500).send(error)
     }
+  },
+
+  updateGearById: async (req, res) => {
+    try {
+      let db = req.app.get('db')
+      let { id } = req.params
+      let { make, model, serial, condition, category, description } = req.body;
+      let categoryObject = categoryArray.find(obj => obj.categoryPath === category);
+      let categorySlug = categoryObject.slug;
+      let category_id = categoryObject.categoryid;
+      let categorydisplay = categoryObject.categorydisplay;
+      console.log(id)
+      console.log(category_id)
+      let gearInfo = await db.updateGearById([make, model, serial, condition, categorydisplay, category, category_id, categorySlug, description, id])
+      res.send(gearInfo[0])
+    } catch (error) {
+      console.log('Gear Update Error', error)
+      res.status(500).send(error)
+    }
   }
-
-
 }

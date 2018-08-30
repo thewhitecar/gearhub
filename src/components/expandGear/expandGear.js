@@ -48,47 +48,8 @@ export default class ExpandGear extends Component {
     }
 
     componentDidMount() {
-        let { id } = this.props.match.params;
-        axios.get(`/api/gear/${id}`).then(results => {
-
-            let {
-                name,
-                make,
-                model,
-                category,
-                categoryslug,
-                serial,
-                condition,
-                description,
-                photo_url_1,
-                photo_url_2,
-                photo_url_3,
-                photo_url_4
-            } = results.data;
-
-            this.setState({
-                name,
-                make,
-                model,
-                category,
-                categoryslug,
-                serial,
-                condition,
-                description,
-                photo_url_1,
-                photo_url_2,
-                photo_url_3,
-                photo_url_4,
-                updatedMake: make,
-                updatedModel: model,
-                updatedCategory: category,
-                updatedSerial: serial,
-                updatedCondition: condition,
-                updatedDescription: description
-            });
-
-        });
-    }
+        this.refresh()
+        }
 
     handleOpenModal() {
         this.setState({ showModal: true });
@@ -143,6 +104,64 @@ export default class ExpandGear extends Component {
 
     goBack() {
         this.props.history.push("/dash");
+    }
+
+    handleUpdateGear = (id) => {
+        let obj = {
+            make: this.state.updatedMake,
+            serial: this.state.updatedSerial,
+            model: this.state.updatedModel,
+            condition: this.state.updatedCondition,
+            category: this.state.updatedCategory,
+            description: this.state.updatedDescription,
+        }
+        axios.put(`/api/gear/${id}`, obj).then(res =>{
+            this.refresh()
+            this.handleCloseModal()
+        })
+    }
+
+    refresh = () => {
+        let { id } = this.props.match.params;
+        axios.get(`/api/gear/${id}`).then(results => {
+
+            let {
+                name,
+                make,
+                model,
+                category,
+                categoryslug,
+                serial,
+                condition,
+                description,
+                photo_url_1,
+                photo_url_2,
+                photo_url_3,
+                photo_url_4
+            } = results.data;
+
+            this.setState({
+                name,
+                make,
+                model,
+                category,
+                categoryslug,
+                serial,
+                condition,
+                description,
+                photo_url_1,
+                photo_url_2,
+                photo_url_3,
+                photo_url_4,
+                updatedMake: make,
+                updatedModel: model,
+                updatedCategory: category,
+                updatedSerial: serial,
+                updatedCondition: condition,
+                updatedDescription: description
+            });
+
+        });
     }
 
     render() {
@@ -223,7 +242,7 @@ export default class ExpandGear extends Component {
                             <p className="gear_p_orange_modal_description">Description</p> <input value={this.state.updatedDescription} className="modalInputDescription" onChange={this.handleUpdatedDescriptionField}></input>
                             </div>
                             <div className="bottomModalDiv">
-                            <button className="update_item_button">Update Item</button>
+                            <button onClick={() => this.handleUpdateGear(id)} className="update_item_button">Update Item</button>
                             </div>
                         </div>
                     </Modal>

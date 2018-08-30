@@ -14,77 +14,56 @@ import logout_icon from './logout.png'
 
 
 class Form2 extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state={
-            uploaderVisible : true
+        this.state = {
+            uploaderVisible: true
         }
     }
 
-
-
-    // componentDidMount() {
-    //     axios.get('/api/images').then(response => {
-    //       this.setState({
-    //         images: response.data
-    //       })
-    //     }) 
-    //   }
-
-    // onFinish = (response) => {
-    //     let imageUrl = response.signedUrl.split('?').shift()
-    //     let userID = this.props.user.id
-    //     axios.post('/api/images', { imageUrl, userID }).then(response => {
-    //       update_photo1(response.data.image_url_1)
-    //       this.setState({
-    //         images: [ ...this.state.images, response.data ]
-    //       })
-    //     }) 
-    //   }
-
-    toggleUploader(){
+    toggleUploader() {
         this.setState({
-            uploaderVisible : false
+            uploaderVisible: false
         })
     }
 
     onFinish = (response) => {
         const { update_photo1, update_photo2, update_photo3, update_photo4 } = this.props;
         let imageUrl = response.signedUrl.split('?').shift();
-        if (this.props.photo1 === "/static/media/none.db88a501.png"){
+        if (this.props.photo1 === "/static/media/none.db88a501.png") {
             update_photo1(imageUrl);
-        } else if (this.props.photo2 === "/static/media/none.db88a501.png"){
+        } else if (this.props.photo2 === "/static/media/none.db88a501.png") {
             update_photo2(imageUrl);
-        } else if (this.props.photo3 === "/static/media/none.db88a501.png"){
+        } else if (this.props.photo3 === "/static/media/none.db88a501.png") {
             update_photo3(imageUrl)
-        } else if (this.props.photo4 === "/static/media/none.db88a501.png"){
+        } else if (this.props.photo4 === "/static/media/none.db88a501.png") {
             update_photo4(imageUrl);
             this.toggleUploader();
-        } else {alert("You can only upload four photos for each instrument")}
-        
+        } else { alert("You can only upload four photos for each instrument") }
+
     }
 
-    render() {  
+    render() {
 
         let Uploader = <ReactS3Uploader
-        signingUrl="/s3/sign"
-        accept="image/*"
-        onFinish={this.onFinish}
-        server={process.env.REACT_APP_SERVERURL}
-        uploadRequestHeaders={{ 'x-amz-acl': 'public-read' }} />
- 
+            signingUrl="/s3/sign"
+            accept="image/*"
+            onFinish={this.onFinish}
+            server={process.env.REACT_APP_SERVERURL}
+            uploadRequestHeaders={{ 'x-amz-acl': 'public-read' }} />
+
         return (
             <div className="background">
                 <div className="header">
                     <img src={menu_icon} className="buttons" alt="" />
                     <img alt="" src={add_icon} onClick={this.toggleAddGear} className="buttons" />
-                    <Link to="/"><img src={logout_icon} alt="logout" onClick={this.props.logOut} className="buttons"/></Link>
+                    <Link to="/"><img src={logout_icon} alt="logout" onClick={this.props.logOut} className="buttons" /></Link>
                     <div className="spacer" />
                     <Link to="/dash"><img alt="" src={logo} className="logo" /></Link>
                 </div>
                 <div className="content-box">
                     <div className="left-div-photos">
-                        <Link to="/form"><img src={left} alt=""/></Link>
+                        <Link to="/form"><img src={left} alt="" /></Link>
                     </div>
                     <div className="photos-center-div">
                         <h1 className="photos-title"> add photos </h1>
@@ -96,10 +75,10 @@ class Form2 extends Component {
                             <img alt="" className="photo" src={this.props.photo4} />
                         </div>
                     </div>
-                <div className="right-div">
-                <Link to="/form3"><img src={right} alt=""/></Link>
+                    <div className="right-div">
+                        <Link to="/form3"><img src={right} alt="" /></Link>
+                    </div>
                 </div>
-            </div>
             </div>
         )
     }
