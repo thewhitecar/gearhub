@@ -20,6 +20,7 @@
     width: 2vw;
     margin-top: 3vh;
     margin-right: 3vw;
+    cursor: pointer;
 }
 
 .gearTitleSpan{
@@ -39,6 +40,7 @@
 }
 
 .geardeletecontainer{
+    padding-top: 10vh;
     width: 50%;
     display: flex;
     flex-direction: row;
@@ -48,16 +50,25 @@
 
 .delete_icon{
     height: 3.5vh;
+    cursor: pointer;
 }
 
 .gearInfo{
     align-items: center;
+    padding-top: 2.5vh;
 }
 
 .gear_p{
     color: #FE6B38;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.3rem;
+}
+
+.gear_button{
+    color: #FE6B38;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    cursor: pointer;
 }
 
 .gear_p_orange{
@@ -77,7 +88,7 @@
     height: 40vh;
     width: 35vw;
     background-color: #FE6B38;
-    
+    overflow: none;
 }
 
 .gear-right-container{
@@ -87,3 +98,80 @@
         width: 40vw;
         margin-left: 3vw;
     }
+
+.topModalDiv{
+    width: 100%;
+    padding-left: 1vw;
+}
+
+.middleModalDiv{
+    width: 100%;
+    flex-direction: column;
+    margin-top: -7vh;
+}
+
+.gear_p_orange_modal{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3vh;
+    color: #FE6B38;
+    padding-left: 15vw;
+}
+
+.gear_p_orange_modal_description{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3vh;
+    color: #FE6B38;
+    padding-left: 15vw;
+}
+
+.modalInput{
+    background-color: #0F181A;
+    margin-left: 3vw;
+    border: none;
+    width: 40vw;
+    height: 6vh;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3vh;
+    color: #f2f1ef;
+}
+
+.modalWrapper{
+display: flex;
+flex-direction: row;
+align-items: center;
+background-color: #0F181A;
+}
+
+.modalInputDescription{
+    background-color: #0F181A;
+    margin-left: 3vw;
+    border: none;
+    width: 40vw;
+    height: 6vh;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3vh;
+    color: #f2f1ef;
+}
+
+
+.bottomModalDiv{
+width: 100%;
+margin-top: 3vh;
+}
+
+.update_item_button{
+    padding: 2vh 3vw;
+    background: #3FC380;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    color: #1C272B;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 30vw;
+}
+
+.update_item_button:hover{
+    color: white;
+}

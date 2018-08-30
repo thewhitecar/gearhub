@@ -9,6 +9,7 @@ import shield from './shield.png'
 import location from './location.png'
 import studio from './studio.png'
 import Slider from 'react-slick'
+import AboutSlider from '../aboutSlider/AboutSlider'
 
 
 class Home extends Component {
@@ -40,7 +41,7 @@ class Home extends Component {
 
 
 
-      <div>
+      <div className="whyisthisdivhere">
         <header className="v-header container">
           <div className="fullscreen-video-wrap">
             <video autoPlay={true} loop muted plays-inline="true">
@@ -50,7 +51,7 @@ class Home extends Component {
           <div className="header-overlay"></div>
           <div className="header-content">
           <img className="mainlogo" src={logo} style={{marginBottom: "-6vh"}} alt=""></img>
-          <p className="homepage-text" style={{paddingLeft: "6vw", paddingRight: "6vw"}}>Helping musicians and engineers protect their instruments, equipment and gear. </p>
+          <p className="homepage-text-top">Helping musicians and engineers protect their instruments, equipment and gear. </p>
             <div className="buttons-wrapper">
               <button onClick={this.login} className="login">Log In</button>
               <button className="register" onClick={this.login} >Register</button>
@@ -74,6 +75,10 @@ class Home extends Component {
                 <p className="homepage-text">For gearheads seeking the perfect sound, our equipment is in a constant state of flux.  Track the value of your gear using the Reverb API* to find the best way to fund that next big next purchase.</p>
               </div>
             </div>
+
+
+
+            
 <div className="homespacer"></div>
             <div className="top-container">
               <div className="containers">
@@ -89,6 +94,10 @@ class Home extends Component {
             </div>
            </div>
         </section>
+
+            <div className="aboutSliderDiv">
+            <AboutSlider/>
+            </div>
 
 <div className= "sectionb">
  <Slider {...settings}>

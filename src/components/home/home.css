@@ -22,8 +22,6 @@ html{
     text-align: center;
 }
 
-
-
 .fullscreen-video-wrap {
     position: absolute;
     top: 0;
@@ -113,6 +111,10 @@ html{
     cursor: pointer;
 }
 
+.aboutSliderDiv{
+    display: none;
+}
+
 .section-a{
     padding: 20px 0;
     background: #1C272B;
@@ -152,6 +154,13 @@ html{
 }
 
 .homepage-text{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+}
+
+.homepage-text-top{
+    padding-left: 6vw;
+    padding-right: 6vw;
     font-family: 'Montserrat', sans-serif;
     font-weight: 200;
 }
@@ -216,4 +225,49 @@ background-color: black;
         display: none;
     }
 
-  }
+    .header-overlay{
+        height: 50vh;
+        width: 100%;
+    }
+
+    .header-content p {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 200;
+        font-size: 3.5vh;
+        color: #f2f1ef;
+    }
+
+    .section-a{
+        display: none
+    }
+
+    .aboutSliderDiv{
+        display:block;
+    }
+
+    .aboutSlider{
+        width: 100%
+    }
+
+    .whyisthisdivhere{
+        background-color: #313232
+    }
+
+    .studioimage{
+        width: 80vw;
+        height: auto;
+        margin: 0 auto;
+        margin-top: -1vh;
+    }
+
+    .footerlogo{
+        height: 7vh;
+        width: auto;
+        margin-top: 2vh
+    }
+
+    .footer{
+        height: 11vh;
+    }
+
+}

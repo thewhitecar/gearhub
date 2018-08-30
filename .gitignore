@@ -4,6 +4,7 @@
 /node_modules
 /src/components/home/background.mp4
 .env
+.env.prod
 
 # testing
 /coverage

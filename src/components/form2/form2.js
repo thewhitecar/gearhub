@@ -70,7 +70,7 @@ class Form2 extends Component {
         signingUrl="/s3/sign"
         accept="image/*"
         onFinish={this.onFinish}
-        server="http://localhost:4000"
+        server={process.env.REACT_APP_SERVERURL}
         uploadRequestHeaders={{ 'x-amz-acl': 'public-read' }} />
  
         return (
