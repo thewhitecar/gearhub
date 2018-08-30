@@ -21,10 +21,10 @@ export default class AboutSlider extends Component {
 
       <div>
         <Slider {...settings}>
-        <img src={image1}></img>
-        <img src={image2}></img>
-        <img src={image3}></img>
-        <img src={image4}></img>
+        <img alt="" src={image1}></img>
+        <img alt="" src={image2}></img>
+        <img alt="" src={image3}></img>
+        <img alt="" src={image4}></img>
         </Slider>
       </div>
     )

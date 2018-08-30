@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { logOut } from "../../redux/reducers/auth_reducer";
+import SideDrawer from '../sidedrawer/sideDrawer';
 import axios from "axios";
 import SimpleSlider from "../SliderComponent/SliderComponent";
-
+import Backdrop from '../backdrop/backdrop'
 import menu_icon from "./menu.png";
 import add_icon from "../buttons/add.png";
 import logo from "../buttons/logo.png";
@@ -20,7 +21,8 @@ class Dashboard extends Component {
       pageBegin: 0,
       pageEnd: 3,
       displayPrevButton: false,
-      displayNextButton: true
+      displayNextButton: true,
+      sideDrawerOpen: false
     };
   }
 
@@ -46,6 +48,16 @@ class Dashboard extends Component {
     // } else{this.props.history.push("/")}}
   }
 
+  drawerToggleClickHandler = () => {
+    this.setState((prevState) => {
+      return {sideDrawerOpen: !prevState.sideDrawerOpen};
+    });
+  };
+
+  backdropClickHandler = () => {
+    this.setState({sideDrawerOpen: false});
+  };
+  
   nextClick = num => {
     if (num < this.state.dataMax) {
       this.setState({
@@ -69,6 +81,11 @@ class Dashboard extends Component {
   }
 
   render() {
+    let backdrop;
+    if(this.state.sideDrawerOpen){
+      backdrop = <Backdrop click={this.backdropClickHandler} />
+    }
+
     let array = this.state.data.slice(this.state.pageBegin, this.state.pageEnd);
     let categoryView = array.map(e => {
       return (
@@ -81,9 +98,11 @@ class Dashboard extends Component {
 
     return (
       <div className="background">
+      <SideDrawer show={this.state.sideDrawerOpen}/>
+      {backdrop}
         <div className="header">
           <div className="spacer-left" />
-          <img src={menu_icon} className="buttons" alt="Menu"/>
+          <img onClick={this.drawerToggleClickHandler} src={menu_icon} className="menu-button" alt="Menu"/>
           <Link to="/form"><img alt="Add Gear" src={add_icon} className="buttons" /></Link>
           <Link to="/"><img src={logout_icon} alt="logout" onClick={this.props.logOut} className="buttons"/></Link>
           <div className="spacer-mid" />
@@ -108,9 +127,10 @@ class Dashboard extends Component {
           </div>
 
           <div className="categoryBox">{categoryView}</div>
-
-          {this.state.displayPrevButton && <button onClick={() => this.prevClick(this.state.pageBegin)}>PREV PAGE</button>}
-          {this.state.displayNextButton && <button onClick={() => this.nextClick(this.state.pageEnd)}> NEXT PAGE</button>}
+          <div className="pageButtonWrapper">
+          {this.state.displayPrevButton && <button className="nextbutton" onClick={() => this.prevClick(this.state.pageBegin)}>PREV PAGE</button>}
+          {this.state.displayNextButton && <button className="nextbutton" onClick={() => this.nextClick(this.state.pageEnd)}> NEXT PAGE</button>}
+          </div>
         </div>
       </div>
     );

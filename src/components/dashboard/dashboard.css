@@ -4,7 +4,7 @@
     background-color: #1C272B;
 }
 
-.header{
+.header {
     background-color: transparent;
     position: sticky;
     padding-top: 1rem;
@@ -14,24 +14,31 @@
     align-items: center;
 }
 
-.spacer-left{
+.spacer-left {
     width: 4vw;
 }
 
-.spacer-mid{
+.spacer-mid {
     width: 50vw;
 }
 
-.buttons{
+.buttons {
     height: 6vh;
     margin-left: 2vw;
+    cursor: pointer;
+}
+
+.menu-button {
+    height: 6vh;
+    margin-left: 2vw;
+    cursor: pointer;
 }
 
 .logo {
     height: 15vh;
 }
 
-.dashboard-content-box{
+.dashboard-content-box {
     margin: auto auto;
     background-color: #00000059;
     width: 90vw;
@@ -42,31 +49,31 @@
     padding-bottom: 10vh;
 }
 
-.titleDiv{
+.titleDiv {
     width: 100%;
     margin-top: 5vh;
 }
 
-.spanDiv{
+.spanDiv {
     width: 100%;
     margin-bottom: -1vh;
 }
 
-.whiteSpan{
+.whiteSpan {
     color: #f2f1ef;
     font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
     margin-left: 3vw;
 }
 
-.orangeSpan{
+.orangeSpan {
     color: #FE6B38;
     letter-spacing: .3vw;
     font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
 }
 
-.categoryHeader{
+.categoryHeader {
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     color: #f2f1ef;
@@ -75,7 +82,7 @@
     text-justify: center;
 }
 
-.categoryBox{
+.categoryBox {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -83,7 +90,7 @@
     margin-bottom: 10vh;
 }
 
-.menu-text{
+.menu-text {
     color: #f2f1ef;
     margin-left: 3vw;
     letter-spacing: .2vw;
@@ -91,14 +98,60 @@
     font-size: .7rem;
 }
 
-.menu-select{
+.menu-select {
     color: #FE6B38;
     letter-spacing: .3vw;
     font-family: 'Montserrat', sans-serif;
     font-size: .7rem;
 }
 
-.categoryDiv{
+.categoryDiv {
     display: flex;
     flex-direction: column;
+}
+
+.pageButtonWrapper {
+    margin: auto 10vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.nextbutton {
+    padding: 1vh 1vw;
+    background: #FE6B38;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 2vh;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.nextbutton:hover {
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .buttons {
+        display: none
+    }
+    .logo {
+        height: 10vh;
+        width: auto;
+    }
+    .header {
+        height: 12vh;
+    }
+    .categoryBox {
+        flex-direction: column;
+        align-content: center;
+    }
+    .categoryDiv {
+        flex-direction: column;
+        align-content: center;
+    }
 }
