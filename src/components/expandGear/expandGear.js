@@ -1,12 +1,22 @@
 import React, { Component } from "react";
 
+//components
+
 import Backdrop from '../backdrop/backdrop'
 import SideDrawer from '../sidedrawer/sideDrawer'
 import GearSlider from "../gearSlider/gearSlider";
 import Chart from "../chart/chart";
+import Modal from 'react-modal';
+
+//other
 
 import { Link } from "react-router-dom";
 import axios from "axios";
+import "./expandGear.css";
+import categoryArray from '../../jsData/categoryVariables';
+import conditionArray from '../../jsData/conditionArray';
+
+//images
 
 import menu_icon from "../buttons/menu.png";
 import add_icon from "../buttons/add.png";
@@ -15,11 +25,6 @@ import logout_icon from "../buttons/logout.png";
 import delete_icon from "../buttons/delete.png";
 import back from "../buttons/back.png";
 
-import "./expandGear.css";
-import Modal from 'react-modal';
-
-import categoryArray from '../../jsData/categoryVariables';
-import conditionArray from '../../jsData/conditionArray';
 
 export default class ExpandGear extends Component {
     constructor(props) {
@@ -164,7 +169,6 @@ export default class ExpandGear extends Component {
                 updatedCondition: condition,
                 updatedDescription: description
             });
-
         });
     }
 
@@ -218,7 +222,7 @@ export default class ExpandGear extends Component {
                 <div className="gear-left-container">
                     <div className="titleDiv">
                         <img onClick={() => this.goBack()} className="back" src={back} alt="go back" />
-                        <span className="gearTitleSpan">{this.state.make}</span>
+                        <span className="gearTitleSpan">{this.state.make + " "}</span>
                         <span className="gearTitleorangeSpan">
                             {this.state.model}
                         </span>
