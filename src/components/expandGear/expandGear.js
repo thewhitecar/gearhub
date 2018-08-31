@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 
+import Backdrop from '../backdrop/backdrop'
+import SideDrawer from '../sidedrawer/sideDrawer'
 import GearSlider from "../gearSlider/gearSlider";
 import Chart from "../chart/chart";
+
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -39,7 +42,8 @@ export default class ExpandGear extends Component {
             updatedCategory: "",
             updatedSerial: "",
             updatedCondition: "",
-            updatedDescription: ""
+            updatedDescription: "",
+            sideDrawerOpen: false
         };
 
         this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -164,7 +168,23 @@ export default class ExpandGear extends Component {
         });
     }
 
+    drawerToggleClickHandler = () => {
+        this.setState(prevState => {
+            return { sideDrawerOpen: !prevState.sideDrawerOpen };
+        });
+    };
+
+    backdropClickHandler = () => {
+        this.setState({ sideDrawerOpen: false });
+    };
+
     render() {
+
+        let backdrop;
+        if (this.state.sideDrawerOpen) {
+            backdrop = <Backdrop click={this.backdropClickHandler} />;
+        }
+
         let categoryMap= [];
         categoryMap = categoryArray.map(e => {
             return(
@@ -177,9 +197,11 @@ export default class ExpandGear extends Component {
             )})
         let { id } = this.props.match.params;
         return <div className="background">
-            <div className="header">
+        <SideDrawer show={this.state.sideDrawerOpen} />
+        {backdrop}
+        <div className="header">
                 <div className="spacer-left" />
-                <img src={menu_icon} className="buttons" alt="" style={{ marginBottom: "0.8vh" }} />
+                <img src={menu_icon} className="buttons" alt="" onClick={this.drawerToggleClickHandler} style={{ marginBottom: "0.8vh" }} />
                 <Link to="/form">
                     <img alt="" src={add_icon} className="buttons" />
                 </Link>

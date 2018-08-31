@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 export default class SimpleSlider extends Component {
   
   render() {
-
     const settings = {
       infinite: true,
       speed: 500,
@@ -14,16 +13,14 @@ export default class SimpleSlider extends Component {
       slidesToScroll: 1,
       className: "slider"
     };
-
+    console.log('images', this.props.images, 'ids', this.props.ids)
     let imagesRenderer = this.props.images.map(e => {
       return(
-      this.props.ids.map(elem =>  {
-        return (
         <div className="image-container">
-         <Link to={`gear/${elem}/`}><img src={e} alt="" className="slider-image"></img></Link>
+         <Link to={`gear/${e.id}/`}><img src={e.imageUrl} alt="" className="slider-image"></img></Link>
         </div>
-        )}))})
-
+      )
+    })
   
     return (
       

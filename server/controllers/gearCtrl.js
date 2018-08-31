@@ -31,8 +31,7 @@ module.exports = {
           let obj = {
             categoryId: category.category_id,
             categoryName: category.categorydisplay,
-            images: [category.photo_url_1],
-            id: [category.id]
+            images: [{imageUrl: category.photo_url_1, id: category.id}],
           }
           array.push(obj)
           return array
@@ -40,8 +39,7 @@ module.exports = {
           let count = 0;
           array.forEach(elem => {
             if (elem.categoryId === category.category_id) {
-              elem.images.push(category.photo_url_1)
-              elem.id.push(category.id)
+              elem.images.push({imageUrl: category.photo_url_1, id: category.id})
             } else {
               count++
             }
@@ -50,8 +48,7 @@ module.exports = {
             let obj = {
               categoryId: category.category_id,
               categoryName: category.categorydisplay,
-              images: [category.photo_url_1],
-              id: [category.id]
+              images: [{imageUrl: category.photo_url_1, id: category.id}],
             }
             array.push(obj)
           }

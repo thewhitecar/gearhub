@@ -22,6 +22,10 @@
     width: 50vw;
 }
 
+.loading-gear{
+    margin-top: 20vh;
+}
+
 .buttons {
     height: 6vh;
     margin-left: 2vw;

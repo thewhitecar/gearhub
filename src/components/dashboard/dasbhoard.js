@@ -40,6 +40,7 @@ class Dashboard extends Component {
     // if(this.props.data.user){
     //     console.log(this.props)
     axios.get("/api/gearCategoryView").then(response => {
+      console.log(response.data)
       this.setState({
         data: response.data,
         dataMax: response.data.length
@@ -89,11 +90,13 @@ class Dashboard extends Component {
     }
 
     let array = this.state.data.slice(this.state.pageBegin, this.state.pageEnd);
+    console.log(array)
     let categoryView = array.map(e => {
+      console.log(1111111111, e)
       return (
         <div className="categoryDiv">
           <h1 className="categoryHeader">{e.categoryName}</h1>
-          <SimpleSlider images={e.images} ids={e.id} />
+          <SimpleSlider images={e.images} />
         </div>
       );
     });

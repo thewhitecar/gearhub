@@ -36,7 +36,7 @@ class Form4 extends Component {
             photo4: this.props.photo4
         }
         axios.post('/api/gear', obj).then(res =>{
-            reset_form();
+            this.props.reset_form();
             this.props.history.push('/dash')
         })
     }
@@ -52,7 +52,6 @@ class Form4 extends Component {
       };
 
     render() {
-
         let backdrop;
         if (this.state.sideDrawerOpen) {
           backdrop = <Backdrop click={this.backdropClickHandler} />;
