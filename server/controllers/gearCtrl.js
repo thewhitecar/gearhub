@@ -12,11 +12,9 @@ module.exports = {
       let categorySlug = categoryObject.slug;
       let category_id = categoryObject.categoryid;
       let categorydisplay = categoryObject.display;
-
-      if(photo2 === "/static/media/none.db88a501.png"){ photo2 = null}
-      if(photo3 === "/static/media/none.db88a501.png"){ photo3 = null}
-      if(photo4 === "/static/media/none.db88a501.png"){ photo4 = null}
-
+      if(photo2 == "/static/media/none.db88a501.png"){ photo2 = null}
+      if(photo3 == "/static/media/none.db88a501.png"){ photo3 = null}
+      if(photo4 == "/static/media/none.db88a501.png"){ photo4 = null}
       let gearInfo = await db.addGear([owner_id, make, model, serial, condition, categorydisplay, category, category_id, categorySlug, description, photo1, photo2, photo3, photo4])
       res.send(gearInfo[0])
     } catch (error) {
