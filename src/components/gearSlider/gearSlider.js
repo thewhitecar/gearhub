@@ -3,7 +3,7 @@ import Slider from 'react-slick'
 import './gearslider.css'
 
 export default class GearSlider extends Component {
-  
+
   render() {
 
     const settings = {
@@ -13,15 +13,25 @@ export default class GearSlider extends Component {
       slidesToScroll: 1,
       className: "gearslider"
     };
-         
+
     return (
-      
-      <div>
+
+      <div className="expandGearContainer">
         <Slider {...settings}>
-          <img alt="" src={this.props.img1}/>
-          <img alt="" src={this.props.img2}/>
-          <img alt="" src={this.props.img3}/>
-          <img alt="" src={this.props.img4}/>
+          <div className="image-container">
+            <img className="expandGearImages" alt="" src={this.props.img1} />
+          </div>
+          <div className="image-container">
+            <img className="expandGearImages" alt="" src={this.props.img2} />
+          </div>
+          <div className="image-container">
+            <img className="expandGearImages" alt="" src={this.props.img3} />
+          </div>
+          <div className="image-container">
+            <img className="expandGearImages" alt="" src={this.props.img4} />
+          </div>
         </Slider>
       </div>
-    )}}
+    )
+  }
+}

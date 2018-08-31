@@ -6,7 +6,7 @@ import SideDrawer from '../sidedrawer/sideDrawer';
 import axios from "axios";
 import SimpleSlider from "../SliderComponent/SliderComponent";
 import Backdrop from '../backdrop/backdrop'
-import menu_icon from "./menu.png";
+import menu_icon from "../buttons/menu.png";
 import add_icon from "../buttons/add.png";
 import logo from "../buttons/logo.png";
 import logout_icon from "../buttons/logout.png";
@@ -62,23 +62,19 @@ class Dashboard extends Component {
     if (num < this.state.dataMax) {
       this.setState({
         pageBegin: this.state.pageBegin + 3,
-        pageEnd: (this.state.pageEnd += 4),
-        displayPrevButton: true,
-        displayNextButton: false
+        pageEnd: (this.state.pageEnd += 3),
+        displayPrevButton: true
       });
     }
   };
 
   prevClick = num => {
-    if (num > 0)
+    if (num < 0)
       {this.setState({
         pageBegin: (this.state.pageBegin -= 3),
         pageEnd: (this.state.pageEnd -= 4),
-        displayPrevButton: false,
-        displayNextButton: true
-      }) 
-  }
-  }
+      })
+  }}
 
   render() {
     let backdrop;

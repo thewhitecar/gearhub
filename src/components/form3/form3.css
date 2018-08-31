@@ -1,23 +1,18 @@
-.description-title{
-    font-family: 'Nunito', sans-serif;
-    color: #f2f1ef;;
-    letter-spacing: .1rem;
-    text-align: center;
-}
+
 
 .submission-field{
-width: 40rem;
+width: 65vw;
 height: 20rem;
-background-color: rgba(34, 31, 31, 0.884);
+background: #00000059;
 border: none;
 padding: 5px;
-font-family: 'Nunito', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-size: 3vh;
 color: #f2f1ef;;
-font-size: 1.1rem;
 letter-spacing: .1rem;
 text-align: center;
 word-wrap: break-word;
-max-width: 40rem;
+max-width: 65vw;
 }
 
 .descriptioncenterbox{

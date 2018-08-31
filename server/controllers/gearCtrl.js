@@ -11,7 +11,7 @@ module.exports = {
       let categoryObject = categoryArray.find(obj => obj.categoryPath === category);
       let categorySlug = categoryObject.slug;
       let category_id = categoryObject.categoryid;
-      let categorydisplay = categoryObject.categorydisplay;
+      let categorydisplay = categoryObject.display;
       let gearInfo = await db.addGear([owner_id, make, model, serial, condition, categorydisplay, category, category_id, categorySlug, description, photo1, photo2, photo3, photo4])
       res.send(gearInfo[0])
     } catch (error) {

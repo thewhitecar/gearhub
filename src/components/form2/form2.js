@@ -113,10 +113,14 @@ class Form2 extends Component {
           </Link>
         </div>
         <div className="dashboard-content-box">
+
+
           <div className="titleDiv">
             <span className="whiteSpan">Add </span>
             <span className="orangeSpan">Photos</span>
           </div>
+
+          
           <div className="form-wrapper">
             <div className="form-right-spacer">
               <Link to="/form">
