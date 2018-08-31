@@ -61,7 +61,7 @@ class Dashboard extends Component {
   nextClick = num => {
     if (num < this.state.dataMax) {
       this.setState({
-        pageBegin: this.state.pageBegin + 3,
+        pageBegin: (this.state.pageBegin += 3),
         pageEnd: (this.state.pageEnd += 3),
         displayPrevButton: true
       });
@@ -69,17 +69,23 @@ class Dashboard extends Component {
   };
 
   prevClick = num => {
-    if (num < 0)
+    if (num > 0)
       {this.setState({
         pageBegin: (this.state.pageBegin -= 3),
-        pageEnd: (this.state.pageEnd -= 4),
+        pageEnd: (this.state.pageEnd -= 3),
       })
-  }}
+  }
+  }
 
   render() {
     let backdrop;
     if(this.state.sideDrawerOpen){
       backdrop = <Backdrop click={this.backdropClickHandler} />
+    }
+
+    let prev;
+    if(this.state.pageBegin !== 0){
+      prev = <button className="nextbutton" onClick={() => this.prevClick(this.state.pageBegin)}>PREV PAGE</button>
     }
 
     let array = this.state.data.slice(this.state.pageBegin, this.state.pageEnd);
@@ -108,11 +114,11 @@ class Dashboard extends Component {
         </div>
 
         <div className="dashboard-content-box">
-          <div>
-            <div className="titleDiv">
-              <span className="whiteSpan">MY</span>
-              <span className="orangeSpan">GEAR</span>
-            </div>
+  
+          <div className="titleDiv">
+                        <span className="whiteSpan">MY</span>
+                        <span className="orangeSpan">Gear</span>
+                    </div>
 
             {/* <div className="spanDiv">
                         <span className="menu-text">SHOW BY: </span> <span className="menu-select"> CATEGORY</span>
@@ -120,15 +126,15 @@ class Dashboard extends Component {
                     <div className="spanDiv">    
                         <span className="menu-text">SORT BY: </span><span className="menu-select"> A-Z</span>
                     </div> */}
-          </div>
+          
 
           <div className="categoryBox">{categoryView}</div>
           <div className="pageButtonWrapper">
-          {this.state.displayPrevButton && <button className="nextbutton" onClick={() => this.prevClick(this.state.pageBegin)}>PREV PAGE</button>}
+          {prev}
           {this.state.displayNextButton && <button className="nextbutton" onClick={() => this.nextClick(this.state.pageEnd)}> NEXT PAGE</button>}
           </div>
         </div>
-      </div>
+        </div>
     );
   }
 }
