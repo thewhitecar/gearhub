@@ -13,7 +13,6 @@ export default class SimpleSlider extends Component {
       slidesToScroll: 1,
       className: "slider"
     };
-    console.log('images', this.props.images, 'ids', this.props.ids)
     let imagesRenderer = this.props.images.map(e => {
       return(
         <div className="image-container">

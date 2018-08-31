@@ -67,6 +67,12 @@ class Form2 extends Component {
     }
   };
 
+  nextCheck = () => {
+    if(this.props.photo1 === "/static/media/none.db88a501.png"){
+      alert("Please add at least one picture")
+    } else{this.props.history.push("/form3")}
+  }
+
   render() {
     let backdrop;
     if (this.state.sideDrawerOpen) {
@@ -82,8 +88,9 @@ class Form2 extends Component {
         uploadRequestHeaders={{ "x-amz-acl": "public-read" }}
       />
     );
-
+    console.log(this.props.photo1)
     return (
+      
       <div className="background">
         <SideDrawer show={this.state.sideDrawerOpen} />
         {backdrop}
@@ -141,9 +148,9 @@ class Form2 extends Component {
             </div>
           </div>
           <div className="form-right-spacer">
-            <Link to="/form3">
-              <img src={right} className="right_arrow" alt="" />
-            </Link>
+
+              <img src={right} className="right_arrow" alt="" onClick={()=> this.nextCheck()}/>
+
           </div>
         </div>
       </div>
