@@ -15,16 +15,17 @@ export default class AboutSlider extends Component {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
+      className: "AboutSlider"
     };
 
     return (
 
       <div>
         <Slider {...settings}>
-        <img alt="" src={image1}></img>
-        <img alt="" src={image2}></img>
-        <img alt="" src={image3}></img>
-        <img alt="" src={image4}></img>
+        <img className="aboutsliderimages" alt="" src={image1}></img>
+        <img className="aboutsliderimages"alt="" src={image2}></img>
+        <img className="aboutsliderimages"alt="" src={image3}></img>
+        <img className="aboutsliderimages" alt="" src={image4}></img>
         </Slider>
       </div>
     )

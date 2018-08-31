@@ -27,7 +27,7 @@ export default class SimpleSlider extends Component {
   
     return (
       
-      <div>
+      <div className="image-container">
         <Slider {...settings}>
           {imagesRenderer}
         </Slider>

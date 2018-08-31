@@ -4,11 +4,10 @@
 
 html{
     background-color: #1C272B;
-}
-
-.body{
     overscroll-behavior-y: none;
 }
+
+
 
 .v-header {
     height: 100vh;
@@ -175,11 +174,14 @@ width: 100%;
 background-color: black;
 }
 
+.studioimages{
+    margin-bottom: -1vh;
+}
+
 .studioimage{
     width: 70vw;
     height: 70vh;
     margin: 0 auto;
-    margin-top: -1vh;
 }
 
 .sectionc{
@@ -207,6 +209,10 @@ background-color: black;
     color: #f2f1ef;
     padding-right: 2vw;
     padding-top: 5vh;
+}
+
+.AboutSlider{
+    margin-bottom: -3vh;
 }
 
 @media screen and (max-width: 600px) {
@@ -240,14 +246,6 @@ background-color: black;
 
     .section-a{
         display: none
-    }
-
-    .aboutSliderDiv{
-        display:block;
-    }
-
-    .aboutSlider{
-        width: 100%
     }
 
     .whyisthisdivhere{

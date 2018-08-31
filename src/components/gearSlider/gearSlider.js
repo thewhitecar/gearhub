@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Slider from 'react-slick'
+import './gearslider.css'
 
 export default class GearSlider extends Component {
   

@@ -1,10 +1,11 @@
 .slider{
-    background-color: #FE6B38;
-    width: 20vw;
-    height: 20vh;
+    background-color: transparent;
+    width: 24vw;
+    height: 35vh;
 }
 
 .slider-image{
-    width: 25vw;
-    height: 25vh;
+    width: auto;
+    height: 35vh;
+    margin: 0 auto;
 }
