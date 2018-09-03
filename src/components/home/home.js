@@ -34,13 +34,10 @@ class Home extends Component {
       className: "studioimage",
     };
 
+
     return(
 
       <div>
-
-
-
-
       <div className="whyisthisdivhere">
         <header className="v-header container">
           <div className="fullscreen-video-wrap">
@@ -58,7 +55,6 @@ class Home extends Component {
             </div>
           </div>
         </header>
-
 
 
         <section className="section section-a">
