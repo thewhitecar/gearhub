@@ -14,3 +14,23 @@
     height: auto;
     margin: 0 auto;
 }
+
+@media screen and (max-width: 600px) {
+
+    .slider{
+        background-color: transparent;
+        width: 75w;
+        height: 35vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .slider-image{
+        max-width: 75vw;
+        max-height: 35vh;
+        width: auto;
+        height: auto;
+        margin: 0 auto;
+    }
+}
