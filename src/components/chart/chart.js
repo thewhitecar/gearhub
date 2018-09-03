@@ -91,6 +91,7 @@ export default class Chart extends Component {
               <Line
               maintainAspectRatio={true}
               data={this.state.chartData}
+              responsive={true}
               />
               <div className="chart_div">
               <p className="gear_p_orange">Estimated Value</p>
