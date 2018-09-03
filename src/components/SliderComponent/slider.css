@@ -4,6 +4,11 @@
     height: 35vh;
 }
 
+.image-container{
+    width: 24vw;
+    height: auto;
+}
+
 .slider-image{
     width: auto;
     height: 35vh;

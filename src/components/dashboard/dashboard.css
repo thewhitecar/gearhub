@@ -77,6 +77,18 @@
     font-size: 2rem;
 }
 
+.orangeSpanLink{
+    color: #FE6B38;
+    letter-spacing: .3vw;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.orangeSpanLink:hover{
+    color: white;
+}
+
 .categoryHeader {
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
@@ -140,15 +152,25 @@
 }
 
 @media (max-width: 768px) {
+
+    .html{
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
     .buttons {
         display: none
     }
     .logo {
         height: 10vh;
         width: auto;
+        padding-right: 10vw;
     }
     .header {
         height: 12vh;
+        position: fixed;
+        z-index: 12;
+        background-color: #1C272B;
     }
     .categoryBox {
         flex-direction: column;
@@ -157,5 +179,28 @@
     .categoryDiv {
         flex-direction: column;
         align-content: center;
+    }
+
+    .categoryBox{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .slider{
+        width: 70vw;
+    }
+
+    .slider-image{
+        width: 100%;
+    }
+
+    .dashboard-content-box {
+        padding-top: 15vh;
+        flex-direction: column;
+    }
+
+    .nextbutton{
+        margin-right: 21vw;
     }
 }

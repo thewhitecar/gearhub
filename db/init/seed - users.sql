@@ -48,3 +48,13 @@ CREATE TABLE gear (
     photo_url_3 VARCHAR (300),
     photo_url_4 VARCHAR (300)
 );
+
+
+create table avatars (
+avatar_id serial primary key,
+owner_id integer references users (id),
+avatar_url varchar(400)
+)
+
+/* the above table is used to render an avatar in the sidedrawer component */
+

@@ -38,6 +38,7 @@ html{
 .mainlogo{
     height: 25vh;
     margin-left: -2vw;
+    animation: fadein 2s;
 }
 
 .header-overlay {
@@ -212,6 +213,11 @@ background-color: black;
     margin-bottom: -3vh;
 }
 
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
 @media screen and (max-width: 600px) {
     .mainlogo{
         height:15vh;
@@ -219,6 +225,10 @@ background-color: black;
 
     .login{
         padding: none;
+    }
+
+    .v-header{
+        height: 105vh;
     }
 
     .header-content{
@@ -235,10 +245,7 @@ background-color: black;
     }
 
     .header-content p {
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 200;
         font-size: 3.5vh;
-        color: #f2f1ef;
     }
 
     .section-a{
@@ -264,6 +271,10 @@ background-color: black;
 
     .footer{
         height: 11vh;
+    }
+
+    .aboutSliderDiv{
+        display: block;
     }
 
 }

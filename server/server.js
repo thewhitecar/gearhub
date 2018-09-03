@@ -15,6 +15,7 @@ app.use( express.static( `${__dirname}/../build` ) );
 const AuthCtrl = require('./controllers/authCntrl');
 const S3Ctrl = require('./controllers/S3Cntrl')
 const GearCtrl = require('./controllers/gearCtrl')
+const AvatarCtrl = require('./controllers/AvatarCtrl')
 
 massive(process.env.CONNECTION_STRING).then(db => {
     app.set('db', db)
@@ -59,6 +60,10 @@ app.put('/api/gear/:id', GearCtrl.updateGearById)
 
 app.get('/api/images', S3Ctrl.getImages)
 app.post('/api/images', S3Ctrl.postImage)
+
+//AVATAR ENDPOINT
+
+app.get('/api/avatars', AvatarCtrl.getAvatar)
 
 //BUILD FILES
 

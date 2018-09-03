@@ -205,7 +205,7 @@ export default class ExpandGear extends Component {
         {backdrop}
         <div className="header">
                 <div className="spacer-left" />
-                <img src={menu_icon} className="buttons" alt="" onClick={this.drawerToggleClickHandler} style={{ marginBottom: "0.8vh" }} />
+                <img onClick={this.drawerToggleClickHandler} src={menu_icon} className="menu-button" alt="Menu"/>
                 <Link to="/form">
                     <img alt="" src={add_icon} className="buttons" />
                 </Link>

@@ -168,3 +168,8 @@ margin-top: 3vh;
 .update_item_button:hover{
     color: white;
 }
+
+@media (max-width: 768px) {
+
+
+}

@@ -26,27 +26,14 @@ class Dashboard extends Component {
     };
   }
 
-  // componentWillReceiveProps(props) {
-  //     if (props.user) {
-  //         axios.get('/api/gearCategoryView').then(response => {
-  //             this.setState({
-  //                 data: response.data
-  //             })
-  //         })
-  //     }
-  // }
-
   componentDidMount() {
-    // if(this.props.user){
     axios.get("/api/gearCategoryView").then(response => {
       this.setState({
         data: response.data,
         dataMax: response.data.length
       });
     });
-    // } else{this.props.history.push("/")}}
   }
-  
 
   drawerToggleClickHandler = () => {
     this.setState((prevState) => {
@@ -82,16 +69,12 @@ class Dashboard extends Component {
     if(this.state.sideDrawerOpen){
       backdrop = <Backdrop click={this.backdropClickHandler} />
     }
-
     let prev;
     if(this.state.pageBegin !== 0){
       prev = <button className="nextbutton" onClick={() => this.prevClick(this.state.pageBegin)}>PREV PAGE</button>
     }
-
     let array = this.state.data.slice(this.state.pageBegin, this.state.pageEnd);
-
     let categoryView = array.map(e => {
-
       return (
         <div className="categoryDiv">
           <h1 className="categoryHeader">{e.categoryName}</h1>
@@ -99,8 +82,10 @@ class Dashboard extends Component {
         </div>
       );
     });
-    return (
-      <div className="background">
+    let userDashboard;
+    if(this.props.user){
+      return(
+<div className="background">
       <SideDrawer show={this.state.sideDrawerOpen}/>
       {backdrop}
         <div className="header">
@@ -113,22 +98,11 @@ class Dashboard extends Component {
             <img alt="" src={logo} className="logo" />
           </Link>
         </div>
-
         <div className="dashboard-content-box">
-  
           <div className="titleDiv">
                         <span className="whiteSpan">MY</span>
                         <span className="orangeSpan">Gear</span>
                     </div>
-
-            {/* <div className="spanDiv">
-                        <span className="menu-text">SHOW BY: </span> <span className="menu-select"> CATEGORY</span>
-                    </div>
-                    <div className="spanDiv">    
-                        <span className="menu-text">SORT BY: </span><span className="menu-select"> A-Z</span>
-                    </div> */}
-          
-
           <div className="categoryBox">{categoryView}</div>
           <div className="pageButtonWrapper">
           {prev}
@@ -136,6 +110,33 @@ class Dashboard extends Component {
           </div>
         </div>
         </div>
+      )
+    }else{
+      return(
+        <div className="background">
+      <SideDrawer show={this.state.sideDrawerOpen}/>
+      {backdrop}
+        <div className="header">
+          <div className="spacer-left" />
+          <img onClick={this.drawerToggleClickHandler} src={menu_icon} className="menu-button" alt="Menu"/>
+          <Link to="/form"><img alt="Add Gear" src={add_icon} className="buttons" /></Link>
+          <Link to="/"><img src={logout_icon} alt="logout" onClick={this.props.logOut} className="buttons"/></Link>
+          <div className="spacer-mid" />
+          <Link to="/dash">
+            <img alt="" src={logo} className="logo" />
+          </Link>
+        </div>
+        <div className="dashboard-content-box" style={{height: "80vh"}}>
+          <div className="titleDiv" style={{marginTop: "30vh"}}>
+                        <Link to="/"><span className="orangeSpanLink">Click Here</span></Link>
+                        <span className="whiteSpan">To Log In and View Your Gear</span>
+                    </div>
+                    </div>
+                    </div>
+      )
+    }
+    return (
+      {userDashboard}
     );
   }
 }

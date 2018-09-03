@@ -74,11 +74,7 @@ class Home extends Component {
                 <p className="homepage-titles">track recent sales</p>
                 <p className="homepage-text">For gearheads seeking the perfect sound, our equipment is in a constant state of flux.  Track the value of your gear using the Reverb API* to find the best way to fund that next big next purchase.</p>
               </div>
-            </div>
-
-
-
-            
+            </div>           
 <div className="homespacer"></div>
             <div className="top-container">
               <div className="containers">
