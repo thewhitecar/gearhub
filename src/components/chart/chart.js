@@ -89,6 +89,7 @@ export default class Chart extends Component {
                   <div className="chart_div">
                   <div className="chart_title"><span className="gearTitleSpan">Price</span><span className="gearTitleorangeSpan">History</span></div>
               <Line
+              maintainAspectRatio={true}
               data={this.state.chartData}
               />
               <div className="chart_div">
