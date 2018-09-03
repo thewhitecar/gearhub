@@ -169,6 +169,34 @@ margin-top: 3vh;
     color: white;
 }
 
-@media (max-width: 768px) {
-   
+@media (max-width: 600px) {
+    .gear-left-container{
+        width: 90vw;
+    }
+
+    .gear-right-container{
+        width: 90vw;
+    }
+
+    .back{
+        width: 6vw;
+    }
+
+    .geardeletecontainer{
+        margin-top: -15vh;
+    }
+
+    .gearInfo{
+        text-align: center;
+        width: 70vw;
+    }
+
+    .gear_p_orange{
+        font-size: 2.7vh;
+    }
+    
+    .gear_p2{
+        font-size: 2.6vh;
+    }
+    
 }

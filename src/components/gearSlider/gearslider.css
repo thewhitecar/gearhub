@@ -2,18 +2,36 @@
     height: 45vh;
     width: 40vw;
     background-color: transparent;
-    margin: auto auto;
-}
-
-.imageContainer{
-    height: 45vh;
-    width: auto;
-    margin: auto auto;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .expandGearImages{
-    height: 45vh;
+    max-width: 40vw;
+    max-height: 45vh;
     width: auto;
-    margin: auto auto;
+    height: auto;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+
+    .gearslider{
+        width: 75vw;
+        height: 50vh;
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .expandGearImages{
+        max-width: 75vw;
+        max-height: 50vh;
+        width: auto;
+        height: auto;
+        margin: 0 auto;
+    }
+
 }

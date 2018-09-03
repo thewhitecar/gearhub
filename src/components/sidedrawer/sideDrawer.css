@@ -6,7 +6,7 @@
   top: 0;
   left: 0;
   width: 70%;
-  max-width: 450px;
+  max-width: 475px;
   z-index: 210;
   transform: translateX(-100%);
   transition: transform 0.3s ease-out;
@@ -69,3 +69,14 @@
         display: none
     }
 } */
+
+@media screen and (max-width: 600px) {
+.user{
+  font-size: 2vh;
+}
+
+.side-drawer a {
+  font-size: 3vh
+}
+
+}

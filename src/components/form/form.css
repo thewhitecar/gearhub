@@ -57,3 +57,20 @@ letter-spacing: .1rem;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: .1rem;
 }
+
+@media (max-width: 768px) {
+
+    .form-right-spacer{
+        width: 4vw;
+    }
+
+    .form-left-spacer{
+        width: 4vw;
+    }
+
+    .right_arrow{
+        width: 40px;
+        margin-left: -29px;
+        padding-top: 20vh;
+    }
+}

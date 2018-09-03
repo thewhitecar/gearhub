@@ -10,3 +10,15 @@
 .chart_title{
     margin-bottom: 6vh
 }
+
+@media (max-width: 600px) {
+
+    .chart_div{
+        width: 80vw;
+        height: 70vh
+    }
+
+    .chart_title{
+        white-space: nowrap;
+    }
+}

@@ -315,7 +315,9 @@ export default class ExpandGear extends Component {
                 </div>
 
                 <div className="gear-right-container">
+   
                     <Chart make={this.state.make} model={this.state.model} categoryslug={this.state.categoryslug} />
+
                 </div>
             </div>
         </div>;

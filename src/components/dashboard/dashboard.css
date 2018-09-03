@@ -159,6 +159,10 @@
         overflow-x: hidden;
     }
 
+    .categoryHeader{
+        font-size: 3vh;
+    }
+
     .buttons {
         display: none
     }
@@ -180,6 +184,7 @@
     .categoryDiv {
         flex-direction: column;
         align-content: center;
+        margin-bottom: -5vh;
     }
 
     .categoryBox{
