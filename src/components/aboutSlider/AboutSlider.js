@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Slider from 'react-slick'
-import image1 from './image1.png'
-import image2 from './image2.png'
-import image3 from './image3.png'
-import image4 from './image4.png'
+import image1 from './newimage1.png'
+import image2 from './newimage2.png'
+import image3 from './newimage3.png'
+import image4 from './newimage4.png'
 
 export default class AboutSlider extends Component {
 
@@ -12,10 +12,12 @@ export default class AboutSlider extends Component {
     const settings = {
       infinite: true,
       arrows: false,
-      speed: 500,
+      dots: true,
+      speed: 5000,
+      autoplay: true,
       slidesToShow: 1,
       slidesToScroll: 1,
-      className: "AboutSlider"
+      className: "AboutSlider",
     };
 
     return (

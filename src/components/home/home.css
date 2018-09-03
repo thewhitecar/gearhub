@@ -38,7 +38,7 @@ html{
 .mainlogo{
     height: 25vh;
     margin-left: -2vw;
-    animation: fadein 2s;
+    animation: fadein 3s;
 }
 
 .header-overlay {
@@ -226,6 +226,7 @@ background-color: black;
 }
 
 @media screen and (max-width: 600px) {
+
     .mainlogo{
         height:15vh;
     }
@@ -256,7 +257,7 @@ background-color: black;
     }
 
     .section-a{
-        display: none
+        display: none;
     }
 
     .whyisthisdivhere{
@@ -264,16 +265,15 @@ background-color: black;
     }
 
     .studioimage{
-        width: 80vw;
+        width: 100vw;
         height: auto;
-        margin: 0 auto;
-        margin-top: -1vh;
+        margin: 5vh auto;
     }
 
     .footerlogo{
         height: 7vh;
         width: auto;
-        margin-top: 2vh
+        margin: 2vh auto 0 auto;
     }
 
     .footer{
@@ -282,6 +282,17 @@ background-color: black;
 
     .aboutSliderDiv{
         display: block;
+        background-color: #1C272B;
+        padding-bottom: 10vh;
+    }
+
+    .sectionb{
+        margin-top: -5vh;
+    }
+
+    .slick-dots li button:before{
+        color: orange;
+        font-size: 1.25vh;
     }
 
 }

@@ -28,10 +28,12 @@ class Home extends Component {
 
     const settings = {
       infinite: true,
-      speed: 500,
+      speed: 3000,
       slidesToShow: 1,
       slidesToScroll: 1,
       className: "studioimage",
+      arrows: false,
+      dots: true,
     };
 
 
@@ -104,9 +106,6 @@ class Home extends Component {
  <img src={studio} alt="" className="studioimage"></img>
         </Slider>
         </div>
-
-
-
 
 <div className="sectionc"></div> 
 
