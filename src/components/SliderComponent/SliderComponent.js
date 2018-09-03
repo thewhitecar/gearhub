@@ -11,21 +11,23 @@ export default class SimpleSlider extends Component {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
-      className: "slider"
+      className: "slider",
     };
     let imagesRenderer = this.props.images.map(e => {
       return(
-        <div className="image-container">
+
          <Link to={`gear/${e.id}/`}><img src={e.imageUrl} alt="" className="slider-image"></img></Link>
-        </div>
+
       )
     })
   
     return (
       
-      <div className="image-container">
+
         <Slider {...settings}>
+
           {imagesRenderer}
+
         </Slider>
-      </div>
+
     )}}

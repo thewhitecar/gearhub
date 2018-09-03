@@ -153,6 +153,7 @@ html{
 .homepage-text{
     font-family: 'Montserrat', sans-serif;
     font-weight: 200;
+    font-size: 2.7vh;
 }
 
 .homepage-text-top{
@@ -216,6 +217,12 @@ background-color: black;
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
+}
+
+@media screen and (max-height: 1200px){
+    .homespacer{
+        height: 15vh;
+    }
 }
 
 @media screen and (max-width: 600px) {

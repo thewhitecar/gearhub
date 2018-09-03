@@ -82,10 +82,14 @@ class Home extends Component {
               <img alt="" className="homeicons" src={location}></img>
                 <p className="homepage-titles">connect locally</p>
                 <p className="homepage-text">Find other musicians and engineers in your area to collaborate on projects or to trade, buy, or sell equipment</p>
+                
               </div>
             </div>
+            
            </div>
+           
         </section>
+        <div className="homespacer"></div>
 
             <div className="aboutSliderDiv">
             <AboutSlider/>

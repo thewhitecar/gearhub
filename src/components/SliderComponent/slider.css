@@ -2,15 +2,15 @@
     background-color: transparent;
     width: 24vw;
     height: 35vh;
-}
-
-.image-container{
-    width: 24vw;
-    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .slider-image{
+    max-width: 24vw;
+    max-height: 35vh;
     width: auto;
-    height: 35vh;
+    height: auto;
     margin: 0 auto;
 }
