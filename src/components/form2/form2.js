@@ -88,7 +88,6 @@ class Form2 extends Component {
         uploadRequestHeaders={{ "x-amz-acl": "public-read" }}
       />
     );
-    console.log(this.props.photo1)
     return (
       
       <div className="background">

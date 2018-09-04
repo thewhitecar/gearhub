@@ -71,7 +71,6 @@ export default class ExpandGear extends Component {
     deleteGearById = id => {
         axios.delete(`/api/gear/${id}`).then(results => {
             this.props.history.push("/dash");
-            console.log(results);
         });
     };
 
@@ -192,7 +191,7 @@ export default class ExpandGear extends Component {
         let categoryMap= [];
         categoryMap = categoryArray.map(e => {
             return(
-                <option value={`${e.categoryPath}`}>{`${e.categoryPath}`}</option>
+                <option key={e.categoryid} value={`${e.categoryPath}`}>{`${e.categoryPath}`}</option>
         )})
         let conditionsMap= [];
         conditionsMap = conditionArray.map(e => {

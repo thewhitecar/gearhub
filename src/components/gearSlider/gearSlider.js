@@ -34,17 +34,19 @@ if (this.props.img4) {
   
 }
 
-
-
     return (
+        this.props.img1 
+        ?
         <Slider {...settings}>
        
             {<img className="expandGearImages" alt="" src={this.props.img1} />}
-            
+
           {image2}
           {image3}
           {image4}
         </Slider>
+        :
+        null
     )
   }
 }

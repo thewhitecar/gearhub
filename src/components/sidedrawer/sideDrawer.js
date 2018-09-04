@@ -44,7 +44,7 @@ if(this.props.user){
     return (
       <nav className={drawerClasses}>
         <div className="sidebarlogo">
-        <img src={logo} className="sidebarlogoimage"></img>
+        <img src={logo} alt="" className="sidebarlogoimage"></img>
         <p className="user">Hello, {username}!</p>
         </div>
         {avatar}

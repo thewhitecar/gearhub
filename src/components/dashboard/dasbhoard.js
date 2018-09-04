@@ -48,8 +48,8 @@ class Dashboard extends Component {
   nextClick = num => {
     if (num < this.state.dataMax) {
       this.setState({
-        pageBegin: (this.state.pageBegin += 3),
-        pageEnd: (this.state.pageEnd += 3),
+        pageBegin: (this.state.pageBegin + 3),
+        pageEnd: (this.state.pageEnd + 3),
         displayPrevButton: true
       });
     }
@@ -58,8 +58,8 @@ class Dashboard extends Component {
   prevClick = num => {
     if (num > 0)
       {this.setState({
-        pageBegin: (this.state.pageBegin -= 3),
-        pageEnd: (this.state.pageEnd -= 3),
+        pageBegin: (this.state.pageBegin - 3),
+        pageEnd: (this.state.pageEnd - 3),
       })
   }
   }
@@ -76,13 +76,13 @@ class Dashboard extends Component {
     let array = this.state.data.slice(this.state.pageBegin, this.state.pageEnd);
     let categoryView = array.map(e => {
       return (
-        <div className="categoryDiv">
+        <div className="categoryDiv" key={e.categoryid}>
           <h1 className="categoryHeader">{e.categoryName}</h1>
           <SimpleSlider images={e.images} />
         </div>
       );
     });
-    let userDashboard;
+
     if(this.props.user){
       return(
 <div className="background">
@@ -111,7 +111,8 @@ class Dashboard extends Component {
         </div>
         </div>
       )
-    }else{
+    }
+    else{
       return(
         <div className="background">
       <SideDrawer show={this.state.sideDrawerOpen}/>
@@ -135,9 +136,6 @@ class Dashboard extends Component {
                     </div>
       )
     }
-    return (
-      {userDashboard}
-    );
   }
 }
 
