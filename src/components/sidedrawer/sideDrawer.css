@@ -79,4 +79,9 @@
   font-size: 3vh
 }
 
+.avatar {
+  margin-left: -4vw;
+  margin-top: 12vh;
+}
+
 }
