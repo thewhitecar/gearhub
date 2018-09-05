@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { logOut } from "../../redux/reducers/auth_reducer";
 import SideDrawer from '../sidedrawer/sideDrawer';
 import axios from "axios";
-import SimpleSlider from "../SliderComponent/SliderComponent";
+import NewSlider from "../newSlider/newSlider";
 import Backdrop from '../backdrop/backdrop'
 import menu_icon from "../buttons/menu.png";
 import add_icon from "../buttons/add.png";
@@ -65,6 +65,7 @@ class Dashboard extends Component {
   }
 
   render() {
+
     let backdrop;
     if(this.state.sideDrawerOpen){
       backdrop = <Backdrop click={this.backdropClickHandler} />
@@ -78,7 +79,7 @@ class Dashboard extends Component {
       return (
         <div className="categoryDiv" key={e.categoryid}>
           <h1 className="categoryHeader">{e.categoryName}</h1>
-          <SimpleSlider images={e.images} />
+          <NewSlider images={e.images} />
         </div>
       );
     });

@@ -60,6 +60,7 @@ class Home extends Component {
 
 
         <section className="section section-a">
+        
 <div className="homecolumn">
             <div className="top-container">
               <div className="containers">
@@ -110,7 +111,14 @@ class Home extends Component {
 <div className="sectionc"></div> 
 
 <footer className="footer">
-<img className="footerlogo" src={logo} style={{marginBottom: "-6vh"}}alt=""></img>
+  <img
+    className="footerlogo"
+    src={logo}
+    style={{marginBottom: "-6vh"}}
+    alt="">
+  </img>
+
+
 </footer>
       
 
