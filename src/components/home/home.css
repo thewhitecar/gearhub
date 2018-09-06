@@ -273,7 +273,8 @@ background-color: black;
     .footerlogo{
         height: 7vh;
         width: auto;
-        margin: 2vh auto 0 auto;
+        margin-top: 0;
+        margin-left: 30vw;
     }
 
     .footer{
@@ -291,7 +292,12 @@ background-color: black;
     }
 
     .slick-dots li button:before{
-        color: orange;
+        color: white;
+        font-size: 1.25vh;
+    }
+
+    .slick-dots li button:after{
+        color: #FE6B38;
         font-size: 1.25vh;
     }
 

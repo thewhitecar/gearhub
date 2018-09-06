@@ -125,6 +125,7 @@
 .categoryDiv {
     display: flex;
     flex-direction: column;
+    box-shadow: rgba(221, 221, 221, 0.5) 0px 1px 2px 0px;
 }
 
 .pageButtonWrapper {

@@ -12,6 +12,7 @@ export default class NewSlider extends Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       className: "newslider",
+      autoPlay: false
     };
 
     let imagesRenderer = this.props.images.map(e => {
