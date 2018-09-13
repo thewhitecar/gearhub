@@ -1,3 +1,6 @@
+p{
+    font-family: "Comic Sans MS", cursive, sans-serif
+}
 
 .input-field{
     background: #00000059;
@@ -56,6 +59,12 @@ letter-spacing: .1rem;
     font-size: 1.2rem;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: .1rem;
+}
+
+@media screen{
+    *{
+        font-family: 'Comic Sans'
+    }
 }
 
 @media (max-width: 768px) {
