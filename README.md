@@ -11,12 +11,12 @@ As a music lover and musician myself, I wanted to build an application for helpi
 ### Project Tech: 
   This app utilizes the following tech:
 
-  - [React] (https://reactjs.org/) A JavaScript library for building user interfaces
+  - [React](https://reactjs.org/) A JavaScript library for building user interfaces
   - [Redux](https://redux.js.org/) JS library for global state management patterns
-  - [AmazonS3] (https://aws.amazon.com/s3/) An object storage service that offers industry-leading scalability, data availability, security, and performance.
-  - [ChartJS] (https://www.chartjs.org/) Open source HTML5 charting tool
-  - [Express Sesssion] (https://www.npmjs.com/package/express-session) Client session identifier
-  - [Reverb API] (https://www.reverb-api.com/) Pricing information for sales on Reverb.com used marketplace
+  - [AmazonS3](https://aws.amazon.com/s3/) An object storage service that offers industry-leading scalability, data availability, security, and performance.
+  - [ChartJS](https://www.chartjs.org/) Open source HTML5 charting tool
+  - [Express Sesssion](https://www.npmjs.com/package/express-session) Client session identifier
+  - [Reverb API](https://www.reverb-api.com/) Pricing information for sales on Reverb.com used marketplace
   - [Massive](https://massive-js.readthedocs.io/en/latest/) PostgreSQL database access tool
   - [Axios](https://www.npmjs.com/package/axios) Promise based HTTP client for the browser and node.js
   - [PostgreSQL](https://www.postgresql.org/) Relational database management/query system
